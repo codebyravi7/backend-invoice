@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 export const getUserInvoices = async (req, res) => {
   try {
     // Assuming you have the user ID in req.user or similar
-    const userId = req?.user?._id || "670b6d7f1abd22ee18158d63";
+    const userId = req?.user?._id;
 
     // Fetch the user and populate their invoices
     const user = await User.findById(userId).populate("invoices");
